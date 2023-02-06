@@ -156,21 +156,12 @@ bool Simple(int i, int d, bool flag = true){
 for(int i = 3; i < numEven; i++){
     int del = 2;
     int temp;
-    // bool simple = true;
-    // while(simple && del<i){
-    //     if(i%del == 0) simple = false;
-    //     del++;
-    // }
     if (Simple(i,del)){
         temp = i+1;
         numSimple = i;
         i = numEven - i;
         del = 2;
-        // while(simple && del<i){
-        //     if(i%del == 0) simple = false;
-        //     del++;
-        // }
-        if (Simple(i,del)) i = temp;
+        if (!Simple(i,del)) i = temp;
         else
             break;
     }
